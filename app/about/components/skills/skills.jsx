@@ -22,9 +22,8 @@ const skillCategories = {
 			"NodeJS",
 			"ExpressJS",
 			"Laravel",
-			"Flask",
-			"Django",
-			"Firebase"
+			"codeigneter",
+			"Socket.io"
 		],
 		tools: ["Visual Studio Code", "Git", "Github", "Figma", "Vite", "Docker", "Kubernetes", "Google Cloud", "Postman"],
 	},
@@ -38,15 +37,11 @@ const skillCategories = {
 			"PHP",
 			"Laravel",
 			"Python",
-			"FastAPI",
-			"Flask",
-			"Django",
 			"MySQL",
 			"PostgreSQL",
-			"MongoDB",
-			"Firebase",
+			"MongoDB"
 		],
-		tools: ["Postman", "Docker", "Kubernetes", "Swagger", "Git", "Github", "Google Cloud", "IBM Cloud"],
+		tools: ["Postman", "Docker", "Swagger", "Git", "Github", "Google Cloud"],
 	},
 	ai: {
 		title: "AI & Machine Learning",
@@ -70,22 +65,6 @@ const skillCategories = {
 			"Google Cloud AI",
 			"AWS SageMaker",
 			"IBM Watson",
-		],
-	},
-	mobile: {
-		title: "Mobile Development",
-		icon: MobileIcon,
-		description: "Cross-platform mobile app development",
-		languages: [
-			"React Native",
-			"JavaScript",
-			"TypeScript",
-			"Dart",
-			"Flutter",
-		],
-		tools: [
-			"Android Studio",
-			"React Native CLI",
 		],
 	},
 };

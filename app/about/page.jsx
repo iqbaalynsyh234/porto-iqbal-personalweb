@@ -13,7 +13,7 @@ import Experience from "./components/experience.jsx";
 import Education from "./components/education.jsx";
 
 // images
-import Hero from "@/public/image/me2.jpg";
+import Hero from "@/public/image/iqbal1.jpg";
 
 import Hr from "@/components/Hr";
 import About from "./components/about/about.jsx";
@@ -42,7 +42,7 @@ export default function Page() {
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
 							<Image
 								src={Hero}
-								alt="Alvalen Shafel"
+								alt="Iqbal Alyansyah"
 								layout="fill"
 								objectFit="cover"
 								placeholder="blur"
