@@ -10,19 +10,9 @@ import ScrollDownButton from "./ScrollDownButton";
 
 function Page(props) {
     const params = props.params;
-    const [data, setData] = useState(null);
-    useEffect(() => {
-		const selectedData = jsonData.Projects.find(
-			(item) => item.slug === params.slug
-		);
-		if (selectedData === undefined) {
-			setData("404");
-		} else {
-			setData(selectedData);
-		}
-	}, [params.slug]);
+    const data = jsonData.Projects.find((item) => item.slug === params.slug);
 
-    if (data === "404") {
+    if (data === undefined) {
 		return (
 			<>
 				<NotFound />
