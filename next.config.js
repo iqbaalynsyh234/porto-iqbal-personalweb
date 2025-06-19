@@ -2,8 +2,14 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 	enabled: process.env.ANALYZE === "true",
 });
 module.exports = withBundleAnalyzer({
-	// your Next.js configuration
 	output: 'export',
+	// your Next.js configuration
+	// images: {
+	// 	domains: ["i.scdn.co"],
+	// 	// Add image optimization settings
+	// 	formats: ['image/avif', 'image/webp'],
+	// 	minimumCacheTTL: 60,
+	// },
 	webpack: (config, options) => {
 		config.module.rules.push({
 			test: /\.pdf$/i,
