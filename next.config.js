@@ -8,7 +8,7 @@ const repoName = 'porto-iqbal-personalweb';
 module.exports = withBundleAnalyzer({
 	output: "export",
 	trailingSlash: true,
-	basePath: "/porto-iqbal-personalweb",
+	// basePath: "/porto-iqbal-personalweb",
 	assetPrefix: isProd ? `/${repoName}/` : '',
 	images: {
 		unoptimized: true, 
