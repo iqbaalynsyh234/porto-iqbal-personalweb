@@ -6,9 +6,9 @@ import Button from "@/components/Button";
 import Image from "next/image";
 
 // images
-import ReactChat1 from "@/public/image/projects/web/trivia/trivia1.png";
-import ReactChat2 from "@/public/image/projects/web/trivia/trivia2.png";
-import ReactChat3 from "@/public/image/projects/web/trivia/trivia3.png";
+import ReactChat1 from "@/public/image/projects/web/trivia/login.png";
+import ReactChat2 from "@/public/image/projects/web/trivia/dashboard.jpg";
+import ReactChat3 from "@/public/image/projects/web/trivia/monitor.jpg";
 import ProjectAll from "@/public/image/projects.png";
 
 import Hr from "@/components/Hr";
@@ -174,28 +174,16 @@ export default function Page() {
 							type: "spring",
 						}}>
 						<h2 className="text-2xl font-bold tracking-wider mb-3">
-							Generative Trivia
+							Counting System
 						</h2>
 						<p className="text-gray-600 text-justify title text-lg">
-							A generative trivia website built with Next.js, Firebase,
-							NextAuth, Google OAuth, and TypeScript. Users can generate trivia
-							questions for predefined school subjects and answer them with a
-							unique interactive input style. The application supports user
-							authentication with Google and stores data in Firestore. You can
-							see the source code of this project on my github account or
-							preview the project by clicking the button below.
+							A Website counting system production ok, not ok, defect to feature 
+							counting , dashboard , order, master data, line schedule, schedule 
+							managemenet, realtime counting system, socket.io.
 						</p>{" "}
 						<div className="mt-3">
 							<Button variation="primary">
-								<Link href="projects/trivia">More</Link>
-							</Button>
-							<Button variation="secondary">
-								<a
-									href="https://generative-trivia.vercel.app/"
-									target="_blank"
-									rel="noopener noreferrer">
-									Preview
-								</a>
+								<Link href="projects/counting">More</Link>
 							</Button>
 						</div>
 					</motion.div>
