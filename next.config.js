@@ -1,15 +1,18 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
 	enabled: process.env.ANALYZE === "true",
 });
+
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'porto-iqbal-personalweb';
+
 module.exports = withBundleAnalyzer({
 	output: 'export',
-	// your Next.js configuration
-	// images: {
-	// 	domains: ["i.scdn.co"],
-	// 	// Add image optimization settings
-	// 	formats: ['image/avif', 'image/webp'],
-	// 	minimumCacheTTL: 60,
-	// },
+	trailingSlash: true,
+	basePath: isProd ? `/${repoName}` : '',
+	assetPrefix: isProd ? `/${repoName}/` : '',
+	images: {
+		unoptimized: true, 
+	},
 	webpack: (config, options) => {
 		config.module.rules.push({
 			test: /\.pdf$/i,
@@ -29,7 +32,7 @@ module.exports = withBundleAnalyzer({
 					},
 					{
 						key: "Cache-Control",
-						value: "public, max-age=3600", // Cache for 1 hour
+						value: "public, max-age=3600",
 					},
 				],
 			},
@@ -52,7 +55,6 @@ module.exports = withBundleAnalyzer({
 			},
 		];
 	},
-	// Add performance optimizations
 	reactStrictMode: true,
 	compiler: {
 		removeConsole: process.env.NODE_ENV === 'production' ? {
