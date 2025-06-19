@@ -1,8 +1,4 @@
-"use client";
-import { useState, useEffect, use } from "react";
-import { motion } from "framer-motion";
 import jsonData from "@/json/data.json";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -10,48 +6,7 @@ import NotFound from "@/app/not-found";
 import Image from "next/image";
 import FixedButon from "@/components/FixedButton";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-
-function ScrollDownButton() {
-  const [isAtBottom, setIsAtBottom] = useState(false);
-
-  const handleScroll = () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop < document.documentElement.scrollHeight - document.documentElement.clientHeight) {
-
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
-				setIsAtBottom(true);
-			
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-			setIsAtBottom(false);
-    }
-  };
-
-  return (
-    <div className="fixed bottom-5 left-0 right-0 flex justify-center items-center mb-10">
-      <motion.div
-        className="h-10 w-10 bg-neutral-900 rounded-full flex justify-center items-center cursor-pointer"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={handleScroll}
-      >
-        <FontAwesomeIcon
-          icon={isAtBottom ? faChevronUp : faChevronDown}
-          className="text-white text-2xl"
-        />
-      </motion.div>
-    </div>
-  );
-}
-
+import ScrollDownButton from "./ScrollDownButton";
 
 function Page(props) {
     const params = use(props.params);
@@ -211,3 +166,10 @@ function Page(props) {
 }
 
 export default Page;
+
+export function generateStaticParams() {
+  // Ambil semua slug dari data.json
+  return jsonData.Projects.filter(p => p.show).map(project => ({
+    slug: project.slug
+  }));
+}
