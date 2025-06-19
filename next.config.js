@@ -6,9 +6,9 @@ const isProd = process.env.NODE_ENV === 'production';
 const repoName = 'porto-iqbal-personalweb';
 
 module.exports = withBundleAnalyzer({
-	output: 'export',
+	output: "export",
 	trailingSlash: true,
-	basePath: isProd ? `/${repoName}` : '',
+	basePath: "/porto-iqbal-personalweb",
 	assetPrefix: isProd ? `/${repoName}/` : '',
 	images: {
 		unoptimized: true, 
