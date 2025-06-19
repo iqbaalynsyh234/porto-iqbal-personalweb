@@ -9,7 +9,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import ScrollDownButton from "./ScrollDownButton";
 
 function Page(props) {
-    const params = use(props.params);
+    const params = props.params;
     const [data, setData] = useState(null);
     useEffect(() => {
 		const selectedData = jsonData.Projects.find(
